@@ -1,3 +1,4 @@
+from operator import sub
 import matplotlib.pyplot as plt
 import librosa.display, librosa
 import numpy as np
@@ -16,4 +17,6 @@ def draw_chroma(sample_sounds, sr):
     plt.grid(); plt.show()
 
 piano, sr=librosa.core.load('piano.wav')
-draw_chroma(piano,sr)
+piano2, sr2=librosa.core.load('piano.wav')
+sub_inst = sub(piano,piano2)
+draw_chroma(sub_inst,sr)
